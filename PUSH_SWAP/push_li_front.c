@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_number.c                                        :+:      :+:    :+:   */
+/*   push_li_front.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jerbs <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 17:35:54 by jerbs             #+#    #+#             */
-/*   Updated: 2020/02/13 03:58:35 by jerbs            ###   ########.fr       */
+/*   Created: 2020/01/31 18:20:33 by jerbs             #+#    #+#             */
+/*   Updated: 2020/02/12 07:35:44 by jerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_digit(int c)
+void	push_li_front(t_lst **list, long int s)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+	t_lst *new;
 
-int	is_number(int ac, char **av)
-{
-	int i;
-	int j;
-
-	i = 1;
-	j = 0;
-	while (i < ac)
-	{
-		while (av[i][j])
-		{
-			if (is_digit(av[i][j]) == 0)
-				if (av[i][j] != '-')
-					return (0);
-			j++;
-		}
-		i++;
-		j = 0;
-	}
-	return (1);
+	new = (t_lst *)malloc(sizeof(t_lst));
+	new->a = s;
+	new->next = (*list);
+	(*list) = new;
 }

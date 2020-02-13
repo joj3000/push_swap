@@ -6,7 +6,7 @@
 /*   By: jerbs <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 19:55:51 by jerbs             #+#    #+#             */
-/*   Updated: 2020/01/31 15:05:36 by jerbs            ###   ########.fr       */
+/*   Updated: 2020/02/13 04:19:06 by jerbs            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void				lst_popback(t_lst **list);
 
 void				lst_pushback_a(t_lst **list, int i);
 void				lst_pushback_b(t_lst **list, int i);
+void				push_li_front(t_lst **list, long int s);
 
 void				size_3(t_lst **lista);
 void				size_3_5(t_lst **lista, t_lst **listb1);
@@ -88,5 +89,10 @@ int					biglowin(t_lst *listb, int n);
 int					if_rev_sorted_a(t_lst **list);
 int					error_check(int ac, char **av);
 int					is_sorted(t_lst *list);
+
+char				**ft_strsplit(char const *s, char c);
+int					ft_strcmp(char *s1, char *s2);
+
+void				free_tab(char **tab, char *s);
 
 #endif
